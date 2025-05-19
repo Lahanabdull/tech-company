@@ -1,0 +1,254 @@
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0; /* Ash */
+  color: #111; /* Dark text */
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+a:hover,
+a.active {
+  color: #fff;
+}
+
+/* Header & Navigation */
+header {
+  position: sticky;
+  top: 0;
+  background-color: #000; /* Black navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.navbar a {
+  padding: 0.3rem 0.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Main Sections */
+.section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #f0f0f0; /* Ash */
+  color: #111;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff; /* Light card */
+  color: #111;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  background: #f7f7f7;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+  color: #111;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #000;
+}
+input:focus + label,
+input:valid + label,
+textarea:focus + label,
+textarea:valid + label {
+  top: -12px;
+  font-size: 0.75rem;
+  color: #000;
+}
+
+label {
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  background: #fff;
+  padding: 0 5px;
+  font-size: 0.85rem;
+  color: #000;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Send Button */
+.send-button {
+  background: linear-gradient(to right, #0077ff, #00c9ff);
+  color: white;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.send-button:hover {
+  background: linear-gradient(to right, #005fcc, #00a7cc);
+  transform: scale(1.05);
+}
+
+
+
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 15px;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .navbar {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background-color: #000;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 1rem;
+    border-top: 1px solid #222;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Responsive Cards */
+@media (max-width: 480px) {
+  .card {
+    width: 90%;
+  }
+}
